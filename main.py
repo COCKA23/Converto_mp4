@@ -6,18 +6,19 @@ import sys
 
 class Mp_gif():
     def __init__(self):
-        pass  
+        self.dir_path = None
+        self.fps = None
+
+
+
+    '''Работа по конвертации в .gif и ascii'''
+
 
     def gif(self):
-        dir_path = input("Введите путь до директории: ")
-        fps = input("Введите кол-во кадров в секунду (fps): ")
-        try:
-            fps = float(fps)
-        except ValueError:
-            print("Непиши хуйню. Установил 5 fps .")
-            fps = 5
+        
 
-        gif_folder = os.path.join(dir_path, "gif")
+
+        gif_folder = os.path.join(self.dir_path, "gif")
         os.makedirs(gif_folder, exist_ok=True)
 
         # Проходим по файлам в директории
@@ -62,6 +63,22 @@ class Mp_gif():
             else:
                 print(f"Пропускаю файл (не mp4): {file}")
 
+
+
+    def smvd(self):
+        pass
+
+
+    def parameters(self):
+
+        self.dir_path = input("Введите путь до директории: ")
+        self.fps = input("Введите кол-во кадров в секунду (fps): ")
+        try:
+            self.fps = float(self.fps)
+        except ValueError:
+            print("Непиши хуйню. Установил 5 fps .")
+            fps = 5
+
     def hemp_me(self):
         print("План скрипта:\n\t1) Ввод пути до директории\n\t2) Ввод количества FPS\nПотом появится папка с гифками.")
 
@@ -75,14 +92,16 @@ class Mp_gif():
 
     def run(self):
         print("Вы находитесь в скрипте по преобразованию видео (.mp4) в гиф (.gif), введите /gif или /help для работы.")
-        comand = input()
+        command = input()
 
-        if  comand == "/gif":
+        if  command == "/gif":
+            self.parameters()
             self.gif()
-        elif comand == "/help":
+        elif command == "/help":
             self.hemp_me()
-        elif comand == "/с_video":
-            self.symbol_video()
+        elif command == "/smvd":
+            self.smvd()
+
 
 
         #ПЕРЕЗАГРУКА
