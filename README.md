@@ -1,2 +1,3 @@
 # Converto_mp4
-Minor work was done on the code. The main goal of the change was to develop a program to work on converting .mp4 to ASCII.
+
+The process is frozen due to my lack of professionalism, there will be mini updates with subsequent growth, but for now I will be learning

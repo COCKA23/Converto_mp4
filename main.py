@@ -15,9 +15,7 @@ class Mp_gif():
 
 
     def gif(self):
-        
-
-
+           
         gif_folder = os.path.join(self.dir_path, "gif")
         os.makedirs(gif_folder, exist_ok=True)
 
@@ -84,6 +82,7 @@ class Mp_gif():
 
 
     def restart_programms(self):
+        
         print("\nперезагрузка\n")
 
         python = sys.executable
